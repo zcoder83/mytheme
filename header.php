@@ -8,7 +8,9 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class($class); ?>>
-    <header>
+    <div class="blue-line"></div>
+    <header class="header clearfix">
+    <a class="logo" href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="logo"></a>
     <?php
         wp_nav_menu( array(
             'theme_location'  => 'main_menu',
