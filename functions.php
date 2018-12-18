@@ -10,8 +10,13 @@ function remove_empty_p( $content ) {
 	return $content;
 }
 function additional_custom_styles() {
-  /*Enqueue The Styles*/
-  wp_enqueue_style( 'uniquestylesheetid', get_template_directory_uri() . '/style.css' ); 
+  /*Enqueue The Styles and different css file when on mobile devices*/
+  if ( wp_is_mobile() ) {
+    /* Display and echo mobile specific stuff here */
+  } else {
+    wp_enqueue_style( 'uniquestylesheetid', get_template_directory_uri() . '/style.css' ); 
+  }
+
   /*Enqueue The Script*/
   wp_enqueue_script( 'myscript', get_template_directory_uri() . '/js/myscript.js', array( 'jquery' ), '1.0.0', false );
 }

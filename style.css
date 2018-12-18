@@ -122,18 +122,23 @@ a:link, a:visited, a:hover, a:active {
  }
  .header {
     width: 1200px;
-    margin: 53px auto 40px;
+    margin: 68px auto 40px;
 }
-.wrapper {
-    width: 1200px;
-    margin: 30px auto;
-}
+.home .wrapper {
+    width: 100%;
+    background-image: url('./img/bg02.jpg');
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover; 
+    margin-top: -10px;
+    padding-top: 100px;
+ }
 .wrapper .main {
     width: 750px;
     float: left;
 }
 .wrapper .sidemenu {
-    width: 325px;
+    width: 330px;
     float: right;
 }
 .clearfix::after {
@@ -141,10 +146,23 @@ a:link, a:visited, a:hover, a:active {
     display: block;
     clear: both;
 }
+.inner-wrapper {
+    width: 1200px;
+    margin: auto;
+}
  /**-------------------------------------------------------
  *header & navigation
  --------------------------------------------------------*/
-.menu-navi-container {
+.header .logo {
+    display: inline-block;;
+    width: 224px;
+    height: 48px;
+}
+.header .logo .image {
+    width: 100%;
+    height: 100%;
+}
+ .menu-navi-container {
     float: right;
     font-size: 0;
 } 
@@ -152,13 +170,55 @@ a:link, a:visited, a:hover, a:active {
     list-style-type: none;
 }
 .top-menu .menu-item {
-    font-size: 1.2rem;
+    font-size: 1.8rem;
     display: inline-block;
     margin-left: 20px;
 }
-.inner-wrapper {
-    width: 1200px;
-    margin: auto;
+.top-menu .menu-item a {
+    display: inline-block;
+    font-weight: bold;
+    color: #1d4258;
+    height: 48px;
+    margin-left: 25px;
+    text-align: right;
+    line-height: 30px;
+    vertical-align: -15px;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(
+          to right,
+          #008adf,
+          #008adf 50%,
+          #1d4258 50%);
+    background-size: 200% 100%;
+    background-position: 100%;
+}
+.top-menu .menu-item a:hover {
+    transition: all 0.3s cubic-bezier(0.000, 0.000, 0.230, 1);
+    background-position: 0%;
+  }
+.top-menu .menu-item a::after {
+    content: '';
+    display: block;
+    width: 0;
+    border-bottom: 4px solid #008adf;
+    transition: width 0.3s ease-in-out;
+  }
+.top-menu .menu-item a:hover::after {
+    width: 100%;
+  }
+.top-menu .menu-item-has-children{
+    position: relative;
+}
+.top-menu .menu-item-has-children ul.sub-menu {
+    display: none;
+    position: absolute;
+    width: 350px;
+}
+.top-menu .menu-item-has-children ul.sub-menu li {
+    width: ;
+    display: inline-block;
+    margin: 0;
 }
 
  /**-------------------------------------------------------
@@ -178,13 +238,13 @@ a:link, a:visited, a:hover, a:active {
  --------------------------------------------------------*/
  .home .what-can-do {
     width: 100%;
-    height: 100%;
     background-image: url('./img/bg01.jpg');
     background-repeat: no-repeat;
     background-position: center bottom;
     background-size: cover; 
     padding-bottom: 100px;
  }
+
  .home .en-title {
      font-size: 6.5rem;
      color: #c18356;
@@ -202,13 +262,30 @@ a:link, a:visited, a:hover, a:active {
  }
  .home .what-content {
      margin-top: 75px;
+     font-size: 0;
  }
  .home .what-content .list-whatcando li {
     display: inline-block;
     width: 275px;
+    position: relative;
+    margin-right: 32px;
+ }
+ .home .what-content .list-whatcando li:nth-child(4) {
+     margin-right: 0;
+ }
+ .home .what-content .list-whatcando li:nth-child(1) {
+    margin-left: 4px;
+}
+ .home .what-content .list-num {
+     position: absolute;
+     font-size: 5.043rem;
+     color: #d49261;
+     top: -22px;
+     left: -12px;
  }
  .home .list-whatcando .list-img {
      margin-bottom: 23px;
+     width: 100%;
  }
  .home .list-whatcando .title {
     color: #fff;
@@ -229,55 +306,279 @@ a:link, a:visited, a:hover, a:active {
     font-size: 2.4rem;
     padding: 7px;
     display: inline-block;
+    margin-bottom: 40px;
  }
+
  .move-left {
      margin-left: -5px;
  }
-.home .wrapper .article-box {
+.home .article-box {
     display: block;
-    width: 350px;260
+    width: 350px;
+    margin-bottom: 50px;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px rgba(29,66,88,0.13);
+    position: relative;
+    padding: 290px 28px 30px;
 }
-.home .wrapper .article-box:nth-child(odd){
+.home .wrapper .article-new:nth-child(odd){
     float: left;
 }
-.home .wrapper .article-box:nth-child(even){
+.home .wrapper .article-new:nth-child(even){
     float: right;
 }
-.home .wrapper .article-box .image {
+.home .article-box .image {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 260px;
 }
-.home .wrapper .article-box p {
+.home .wrapper .article-box span {
+    display: inline-block;
+    width: 85px;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 4px 9px;
+    background-color: #37637f;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.home .article-box .oneon-project {
+    background-color: #c18356;
+}
+.home .article-box .title {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 1.5rem;
+    color: #1d4258;
+    height: 20px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    vertical-align: -3px;
+}
+.home .article-box p {
     /* hide text if it more than N lines  */
     overflow: hidden;
     /* for set '...' in absolute position */
     position: relative; 
     /* use this value to count block height */
-    line-height: 1.2em;
+    line-height: 2.3em;
     /* max-height = line-height (1.2) * lines max number (3) */
-    max-height: 2.4em; 
+    max-height: 4.6em; 
     /* fix problem when last visible word doesn't adjoin right side  */
     text-align: justify;
     
     /* */
     margin-right: -1em;
     padding-right: 1em;
+    margin-top: 15px;
+    font-size: 1.3rem;
+    color: #51585c;
 }
   /**-------------------------------------------------------
- *default style
+ * voice style
  --------------------------------------------------------*/
+.home .voice .article-voice {
+    display: inline-block;
+    width: 215px;
+    padding: 190px 28px 30px;
+    position: relative;
+    margin-right: 48px;
+}
+.home .voice .article-voice:nth-child(3){
+    margin: 0;
+}
+.home .voice .article-voice img {
+    width: 100%;
+    height: 160px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.home .voice .article-voice .title {
+    margin: 0;
+    font-size: 1.5rem;
+    /* hide text if it more than N lines  */
+    overflow: hidden;
+    /* for set '...' in absolute position */
+    position: relative; 
+    /* use this value to count block height */
+    line-height: 1.8em;
+    /* max-height = line-height (1.2) * lines max number (3) */
+    max-height: 3.6em; 
+    /* fix problem when last visible word doesn't adjoin right side  */
+    text-align: justify;
+    
+    /* */
+    margin-right: -1em;
+    padding-right: 1em;
+    color: #1d4258;
+}
+.home .article-voice p {
+    margin-top: 10px;
+}
+
+  /**-------------------------------------------------------
+ * MORE style
+ --------------------------------------------------------*/
+ .home .more {
+     width: 100%;
+     text-align: right;
+     color: #c17600;
+ }
+ .home .more .more-btn {
+    display: block;
+ }
+ .home .more .more-btn .more-text {
+     font-size: 1.3rem;
+     color: #c17600;
+     border-bottom: 1px solid #c17600;
+     margin-right: 12px;
+ }
+ .home .more .more-btn .more-dir {
+     font-size: 1.5rem;
+     color: #c17600;
+     vertical-align: -2px;
+ }
 
   /**-------------------------------------------------------
  *default style
  --------------------------------------------------------*/
 
-  /**-------------------------------------------------------
- *default style
- --------------------------------------------------------*/
+/* footer */
+footer {
+    width: 100%;
+    background-image: url('./img/bg03.jpg');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover; 
+    margin-top: -3px;
+    z-index: -2;
+}
+.footer .company-info {
+  float: left;
+}
+.footer {
+  width: 1200px;
+  margin: auto;
+  padding: 100px 0;
+  color: #fff;
+}
+.footer .logo-copy {
+  float: left;
+}
+.footer .logo-copy a {
+  display: block;
+  width: 160px;
+}
+.footer .logo-copy a img {
+  width: 100%;
+}
+.footer .copyright {
+  font-size: 0.9rem;
+  color:;
+  margin-top: 25px;
+}
+.footer .company-item {
+  float: right;
+}
+.footer .company-desc {
+  list-style: none;
+  padding-left: 60px;
+}
+.footer .company-desc li {
+  font-size: 1.2rem;
+  color:;
+}
+.footer .company-desc li + li {
+    margin-top: 16px;
+}
+.footer .map-navi {
+  margin-left: 570px;
+  padding-left: 150px;
+  border-left: 1px solid #fff;
+}
+.footer .map-item {
+  float: left;
+}
+.footer .map-item + .map-item {
+  margin-left: 110px;
+}
+.footer .map-item p {
+  font-size: 1.2rem;
+}
+.footer .map-item p + p {
+  margin-top: 16px;
+}
+.footer .map-item .navi-menu {
+  font-weight: bold;
+}
+.footer .map-item .mrg-25 {
+  margin-top: 25px;
+}
 
   /**-------------------------------------------------------
- *default style
+ * sidebar
  --------------------------------------------------------*/
+ .model-house .model-item {
+     width: 330px;
+ }
+.model-house .model-item .image {
+    width: 100%;
+    height: 245px;
+}
+.model-house .model-item .title {
+    margin: 0;
+}
+.model-house .model-item .article-box {
+    padding: 275px 28px 30px;
+}
+.model-house .model-item .article-model {
+    display: block;
+    width: 100%;
+}
+.town-project {
+    width: 100%;
+}
+.town-project .article-town {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+}
+.town-project .article-town .image {
+    width: 108px;
+    height: 82px;
+}
+.town-project .article-town .title {
+    display: inline-block;
+    margin-left: 15px;
+    font-size: 1.5rem;
+    color: #1d4258;
+    height: 20px;
+    line-height: 20px;
+    letter-spacing: 1px;
+    vertical-align: -3px;
+}
+.town-project .article-town p {
+    /* hide text if it more than N lines  */
+    overflow: hidden;
+    /* for set '...' in absolute position */
+    position: relative; 
+    /* use this value to count block height */
+    line-height: 2.3em;
+    /* max-height = line-height (1.2) * lines max number (3) */
+    max-height: 4.6em; 
+    /* fix problem when last visible word doesn't adjoin right side  */
+    text-align: justify;
+    
+    /* */
+    margin-right: -1em;
+    padding-right: 1em;
+    margin-top: 15px;
+    font-size: 1.3rem;
+    color: #51585c;
+}
 
   /**-------------------------------------------------------
  *default style

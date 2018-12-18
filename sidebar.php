@@ -1,6 +1,7 @@
 <div class="model-house">
     <p class="en-title">MODEL</p>
     <h2 class="heading">モデルハウス</h2>
+    <div class="model-item">
         <?php
               $query = new WP_Query(
                array(
@@ -11,7 +12,7 @@
                );
              ?>
             <?php if($query->have_posts()): while($query->have_posts()): $query->the_post(); ?>
-            <a class="" href="<?php the_permalink(); ?>">
+            <a class="article-box article-model" href="<?php the_permalink(); ?>">
                 <?php the_post_thumbnail('thumbnail', array('class' => 'image')); ?>
                 <h3 class="title"><?php the_title(); ?></h3>
                 <?php
@@ -22,7 +23,15 @@
                   echo $content;
                 ?>
             </a>
-            <?php endwhile; endif; wp_reset_postdata(); ?>
+        <?php endwhile; endif; wp_reset_postdata(); ?>
+        <div class="more">
+            <a class="more-btn" href="">
+            <span class="more-text">MORE</span>
+            <span class="more-dir">></span>
+            </a>
+        </div>
+    </div>
+        
 </div>
 <div class="town-project">
     <p class="en-title">TOWN</p>
@@ -37,7 +46,7 @@
                );
              ?>
             <?php if($query->have_posts()): while($query->have_posts()): $query->the_post(); ?>
-            <a class="" href="<?php the_permalink(); ?>">
+            <a class="article-town clearfix" href="<?php the_permalink(); ?>">
                 <?php the_post_thumbnail('thumbnail', array('class' => 'image')); ?>
                 <h3 class="title"><?php the_title(); ?></h3>
                 <?php

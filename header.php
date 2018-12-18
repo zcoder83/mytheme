@@ -10,7 +10,7 @@
 <body <?php body_class($class); ?>>
     <div class="blue-line"></div>
     <header class="header clearfix">
-    <a class="logo" href="<?php echo home_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="logo"></a>
+    <a class="logo" href="<?php echo home_url(); ?>"><img class="image" src="<?php bloginfo('template_url'); ?>/img/logo.png" alt="logo"></a>
     <?php
         wp_nav_menu( array(
             'theme_location'  => 'main_menu',

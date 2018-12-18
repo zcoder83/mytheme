@@ -3,7 +3,7 @@
       <img class="main-img-item" src="<?php bloginfo('template_url'); ?>/img/main-img.jpg" alt="main-image">
 </div>
 <div class="what-can-do">
-      <div class="inner-wrapper">
+      <div class="whatcando-item inner-wrapper">
         <p class="en-title">WHAT WE CAN DO</p>
         <h1 class="main-title">ライジングだからできる“自由設計”</h1>
         <div class="what-content">
@@ -56,17 +56,22 @@
                );
              ?>
             <?php if($query->have_posts()): while($query->have_posts()): $query->the_post(); ?>
-            <a class="article-box" href="<?php the_permalink(); ?>">
-              <?php if(is_single()): ?>
-                <h3 class="title"><?php the_title(); ?></h3>
-                <?php the_content(); ?>
-              <?php else: ?>
+            <a class="article-box article-new clearfix" href="<?php the_permalink(); ?>">
                 <?php the_post_thumbnail('medium', array('class' => 'image')); ?>
-                <span class="postcat">
-                  <?php
-                    $category = get_the_category();
-                    echo $category[0]->cat_name;
-                  ?>
+                <?php
+                  $categories = get_the_category();
+                  $ctitle = '';
+                  $cls = '';
+
+                  if ( ! empty( $categories ) ) {
+                    foreach ( $categories as $cat ) {
+                      $cls .= $cat->slug . ' ';
+                      $ctitle .= $cat->cat_name . '';
+                    }
+                  }
+                ?>
+                <span class="<?php echo $cls; ?>">
+                  <?php echo $ctitle; ?>
                 </span>
                 <h3 class="title"><?php the_title(); ?></h3>
                 <?php
@@ -76,13 +81,18 @@
                   $content = str_replace(']]>', ']]>', $content);
                   echo $content;
                 ?>
-              <?php endif; ?>
             </a>
             <?php endwhile; endif; wp_reset_postdata(); ?>
           </div>
+          <div class="more">
+              <a class="more-btn" href="">
+                <span class="more-text">MORE</span>
+                <span class="more-dir">></span>
+              </a>
+            </div>
+          <p class="en-title">VOICE</p>
+          <h2 class="heading">お客様の声</h2>
           <div class="voice clearfix">
-            <p class="en-title">VOICE</p>
-            <h2 class="heading">お客様の声</h2>
             <?php
               $query = new WP_Query(
                array(
@@ -93,18 +103,8 @@
                );
              ?>
             <?php if($query->have_posts()): while($query->have_posts()): $query->the_post(); ?>
-            <a class="article-box" href="<?php the_permalink(); ?>">
-              <?php if(is_single()): ?>
-                <h3 class="title"><?php the_title(); ?></h3>
-                <?php the_content(); ?>
-              <?php else: ?>
+            <a class="article-box article-voice" href="<?php the_permalink(); ?>">
                 <?php the_post_thumbnail('medium', array('class' => 'image')); ?>
-                <span class="postcat">
-                  <?php
-                    $category = get_the_category();
-                    echo $category[0]->cat_name;
-                  ?>
-                </span>
                 <h3 class="title"><?php the_title(); ?></h3>
                 <?php
                   $content = get_the_content();
@@ -113,9 +113,14 @@
                   $content = str_replace(']]>', ']]>', $content);
                   echo $content;
                 ?>
-              <?php endif; ?>
             </a>
             <?php endwhile; endif; wp_reset_postdata(); ?>
+            <div class="more">
+              <a class="more-btn" href="">
+                <span class="more-text">MORE</span>
+                <span class="more-dir">></span>
+              </a>
+            </div>
           </div>
         </div>
         <div class="sidemenu">

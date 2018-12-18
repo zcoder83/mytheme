@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div class="wrapper">
-    <div class="inner-wrapper">
+    <div class="inner-wrapper clearfix">
         <div class="main">
             <div class="post">
                 <?php if (have_posts()) : ?>
