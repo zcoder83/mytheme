@@ -132,6 +132,7 @@ a:link, a:visited, a:hover, a:active {
     background-size: cover; 
     margin-top: -10px;
     padding-top: 100px;
+    padding-bottom: 200px;
  }
 .wrapper .main {
     width: 750px;
@@ -340,9 +341,12 @@ a:link, a:visited, a:hover, a:active {
     color: #fff;
     font-size: 1.2rem;
     padding: 4px 9px;
-    background-color: #37637f;
+    
     text-align: center;
     letter-spacing: 1px;
+}
+.home .article-box .town-project {
+    background-color: #37637f;
 }
 .home .article-box .oneon-project {
     background-color: #c18356;
@@ -363,9 +367,9 @@ a:link, a:visited, a:hover, a:active {
     /* for set '...' in absolute position */
     position: relative; 
     /* use this value to count block height */
-    line-height: 2.3em;
+    line-height: 2.1em;
     /* max-height = line-height (1.2) * lines max number (3) */
-    max-height: 4.6em; 
+    max-height: 4.2em; 
     /* fix problem when last visible word doesn't adjoin right side  */
     text-align: justify;
     
@@ -521,65 +525,109 @@ footer {
   /**-------------------------------------------------------
  * sidebar
  --------------------------------------------------------*/
- .model-house .model-item {
+ .side-model .model-item {
      width: 330px;
  }
-.model-house .model-item .image {
+.side-model .model-item .image {
     width: 100%;
     height: 245px;
 }
-.model-house .model-item .title {
+.side-model .model-item .title {
     margin: 0;
 }
-.model-house .model-item .article-box {
+.side-model .model-item .article-box {
     padding: 275px 28px 30px;
 }
-.model-house .model-item .article-model {
+.side-model .model-item .article-model {
     display: block;
     width: 100%;
 }
-.town-project {
+.side-town,
+.side-oneon,
+.side-newevent {
     width: 100%;
+    margin-bottom: 50px;
 }
-.town-project .article-town {
+.article-project {
     display: block;
     width: 100%;
+    height: 82px;
     background-color: #fff;
+    font-size: 0;
+
 }
-.town-project .article-town .image {
+.side-town > .article-project + .article-project,
+.side-oneon > .article-project + .article-project,
+.side-newevent > .article-project + .article-project {
+    margin-top: 30px;
+}
+.article-project .image {
     width: 108px;
     height: 82px;
+    float: left;
 }
-.town-project .article-town .title {
+.article-project .title {
     display: inline-block;
-    margin-left: 15px;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #1d4258;
-    height: 20px;
-    line-height: 20px;
     letter-spacing: 1px;
-    vertical-align: -3px;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
-.town-project .article-town p {
+.article-project p {
+    /* overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 1.3rem;
+    color: #51585c;
+    margin-top: 10px; */
     /* hide text if it more than N lines  */
     overflow: hidden;
     /* for set '...' in absolute position */
     position: relative; 
     /* use this value to count block height */
-    line-height: 2.3em;
+    line-height: 1.3em;
     /* max-height = line-height (1.2) * lines max number (3) */
-    max-height: 4.6em; 
+    max-height: 1.3em; 
     /* fix problem when last visible word doesn't adjoin right side  */
     text-align: justify;
     
     /* */
     margin-right: -1em;
     padding-right: 1em;
-    margin-top: 15px;
+    margin-top: 10px;
     font-size: 1.3rem;
     color: #51585c;
 }
-
+.article-project p:before {
+    /* points in the end */
+    content: '...';
+    /* absolute position */
+    position: absolute;
+    /* set position to right bottom corner of block */
+    right: 0;
+    bottom: 0;
+  }
+.article-project p:after {
+    /* points in the end */
+    content: '';
+    /* absolute position */
+    position: absolute;
+    /* set position to right bottom corner of text */
+    right: 0;
+    width: 1em;
+    /* set width and height */
+    height: 1em;
+    margin-top: 0.2em;
+    background: white;
+  }
+.article-project .project-item {
+    width: 222px;
+    float: right;
+    padding: 23px 45px 23px 30px;
+}
   /**-------------------------------------------------------
  *default style
  --------------------------------------------------------*/
