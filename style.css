@@ -493,7 +493,6 @@ footer {
 }
 .footer .company-desc li {
   font-size: 1.2rem;
-  color:;
 }
 .footer .company-desc li + li {
     margin-top: 16px;
@@ -635,3 +634,8 @@ footer {
   /**-------------------------------------------------------
  *default style
  --------------------------------------------------------*/
+
+
+ div {
+     width: 100%;
+ }

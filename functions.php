@@ -32,8 +32,6 @@ function cmsfactory_setup() {
 add_action( 'after_setup_theme', 'cmsfactory_setup' );
 
 
-
-
  /**-------------------------------------------------------
  register menu navigation
  --------------------------------------------------------*/
