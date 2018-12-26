@@ -115,6 +115,9 @@ a:link, a:visited, a:hover, a:active {
  body {
      font-family: meiryo;
  }
+ body.single-post {
+    background-color: #f6f6f6;
+ }
  .blue-line {
      width: 100%;
      height: 13px;
@@ -123,6 +126,9 @@ a:link, a:visited, a:hover, a:active {
  .header {
     width: 1200px;
     margin: 68px auto 40px;
+}
+.wrapper {
+    padding-bottom: 120px;
 }
 .home .wrapper {
     width: 100%;
@@ -246,7 +252,7 @@ a:link, a:visited, a:hover, a:active {
     padding-bottom: 100px;
  }
 
- .home .en-title {
+.en-title {
      font-size: 6.5rem;
      color: #c18356;
      padding-top: 100px;
@@ -313,7 +319,7 @@ a:link, a:visited, a:hover, a:active {
  .move-left {
      margin-left: -5px;
  }
-.home .article-box {
+.article-box {
     display: block;
     width: 350px;
     margin-bottom: 50px;
@@ -322,20 +328,20 @@ a:link, a:visited, a:hover, a:active {
     position: relative;
     padding: 290px 28px 30px;
 }
-.home .wrapper .article-new:nth-child(odd){
+.wrapper .article-new:nth-child(odd){
     float: left;
 }
-.home .wrapper .article-new:nth-child(even){
+.wrapper .article-new:nth-child(even){
     float: right;
 }
-.home .article-box .image {
+.article-box .image {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 260px;
 }
-.home .wrapper .article-box span {
+.wrapper .article-box span {
     display: inline-block;
     width: 85px;
     color: #fff;
@@ -345,13 +351,13 @@ a:link, a:visited, a:hover, a:active {
     text-align: center;
     letter-spacing: 1px;
 }
-.home .article-box .town-project {
+.article-box .town-project {
     background-color: #37637f;
 }
-.home .article-box .oneon-project {
+.article-box .oneon-project {
     background-color: #c18356;
 }
-.home .article-box .title {
+.article-box .title {
     display: inline-block;
     margin-left: 15px;
     font-size: 1.5rem;
@@ -361,7 +367,7 @@ a:link, a:visited, a:hover, a:active {
     letter-spacing: 1px;
     vertical-align: -3px;
 }
-.home .article-box p {
+.article-box p {
     /* hide text if it more than N lines  */
     overflow: hidden;
     /* for set '...' in absolute position */
@@ -426,21 +432,21 @@ a:link, a:visited, a:hover, a:active {
   /**-------------------------------------------------------
  * MORE style
  --------------------------------------------------------*/
- .home .more {
+ .more {
      width: 100%;
      text-align: right;
      color: #c17600;
  }
- .home .more .more-btn {
+ .more .more-btn {
     display: block;
  }
- .home .more .more-btn .more-text {
+ .more .more-btn .more-text {
      font-size: 1.3rem;
      color: #c17600;
      border-bottom: 1px solid #c17600;
      margin-right: 12px;
  }
- .home .more .more-btn .more-dir {
+ .more .more-btn .more-dir {
      font-size: 1.5rem;
      color: #c17600;
      vertical-align: -2px;
@@ -553,6 +559,7 @@ footer {
     height: 82px;
     background-color: #fff;
     font-size: 0;
+    box-shadow: 2px 2px 2px rgba(29,66,88,0.13);
 
 }
 .side-town > .article-project + .article-project,
@@ -634,8 +641,3 @@ footer {
   /**-------------------------------------------------------
  *default style
  --------------------------------------------------------*/
-
-
- div {
-     width: 100%;
- }
