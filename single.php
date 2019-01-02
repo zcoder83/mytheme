@@ -6,7 +6,6 @@
                 <?php if (have_posts()) : ?>
                     <?php while (have_posts()) : the_post();
                     /* ループ開始 */ ?>
-                       
                        <?php the_category('>', 'multiple'); the_title(); ?>
                         <h3><?php the_title(); ?></h3>
                         <?php the_content(); ?>

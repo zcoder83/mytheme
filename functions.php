@@ -18,6 +18,7 @@ function additional_custom_styles() {
   }
 
   /*Enqueue The Script*/
+  wp_enqueue_script( 'yubinbango', '//yubinbango.github.io/yubinbango/yubinbango.js', array(), null, true );
   wp_enqueue_script( 'myscript', get_template_directory_uri() . '/js/myscript.js', array( 'jquery' ), '1.0.0', false );
 }
 add_action( 'wp_enqueue_scripts', 'additional_custom_styles' );
@@ -48,6 +49,17 @@ add_action( 'init', 'register_my_menu' );
   /**-------------------------------------------------------
    register widget
  --------------------------------------------------------*/
+ // MW WP Formのクラスをyubinbangoのクラスに変更する
+function mwform_form_class() {
+  ?>
+  <script>
+  jQuery(function($) {
+    $( '.mw_wp_form form' ).attr( 'class', 'h-adr' );
+  });
+  </script>
+  <?php
+  }
+  add_action( 'wp_head', 'mwform_form_class', 10000 );
 
   /**-------------------------------------------------------
  Remove 
