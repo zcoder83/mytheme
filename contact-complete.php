@@ -4,11 +4,6 @@
  <div class="inner-wrapper">
     <span class="contact-category-list"><a href="<?php echo home_url(); ?>">TOP</a></span> > <?php the_title(); ?>
  </div>
- <div class="main-title">
-     <div class="inner-wrapper">
-         <span class="contact-us">CONTACT US</span><h1>お問い合わせ</h1>
-     </div>
- </div>
 <div class="step-123 flex-container">
     <div class="step1">
         <span class="step-num">STEP.1</span><span>内容の入力</span>
@@ -30,3 +25,5 @@
 
 
 <?php get_footer(); ?>
+
+

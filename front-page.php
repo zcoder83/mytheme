@@ -71,7 +71,14 @@
                   }
                 ?>
                 <span class="<?php echo $cls; ?>">
-                  <?php echo $ctitle; ?>
+                <?php 
+                  if ($ctitle=="タウンプロジェクト  ") {
+                    echo "タウン";
+                  } else {
+                    echo "ワンオン";
+                  }
+                ?>
+                 
                 </span>
                 <h3 class="title"><?php the_title(); ?></h3>
                 <?php

@@ -4,11 +4,11 @@
  <div class="inner-wrapper">
     <span class="contact-category-list"><a href="<?php echo home_url(); ?>">TOP</a></span> > <?php the_title(); ?>
  </div>
- <div class="main-title">
-     <div class="inner-wrapper">
-         <span class="contact-us">CONTACT US</span><h1>お問い合わせ</h1>
-     </div>
- </div>
+ <div class="common-main-title">
+    <div class="inner-wrapper">
+        <span class="common-title">CONTACT US</span><h1>お問い合わせ</h1>
+    </div>
+</div>
  <div class="inner-wrapper">
     <p class="contact-ex">物件購入、物件売却、物件見学、来店予約などお気軽にお問い合わせください。</p>
 </div>

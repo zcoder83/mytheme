@@ -3,14 +3,14 @@
       <div class="company-info clearfix">
         <div class="logo-copy">
           <a href="#"><img src="<?php bloginfo('template_url'); ?>/img/logo.png" alt=""></a>
-          <p class="copyright">Copyright © 2018 RISING Co.Ltd.</p>
+          <p class="copyright">Copyright © 2018 YOUNGLE Co.Ltd.</p>
         </div>
         <div class="company-item">
           <ul class="company-desc">
-            <li>埼玉県吉川市高富一丁目5番地8</li>
-            <li>TEL: 048-971-6768</li>
-            <li>FAX: 048-971-6785</li>
-            <li>mail:i nfo@rising.jpn.com</li>
+            <li>千葉県柏市豊四季一丁目3番地8</li>
+            <li>TEL: 033-970-3322</li>
+            <li>FAX: 033-971-3321</li>
+            <li>mail: info@youngle.com</li>
           </ul>
         </div>
       </div>

@@ -221,7 +221,7 @@ a:link, a:visited, a:hover, a:active {
 .top-menu .menu-item-has-children ul.sub-menu {
     display: none;
     position: absolute;
-    width: 350px;
+    width: 550px;
 }
 .top-menu .menu-item-has-children ul.sub-menu li {
     width: ;
@@ -642,7 +642,7 @@ footer {
     color: #1d4258;
     text-decoration: underline;
 }
-.main-title {
+.common-main-title {
     margin: 32px 0 60px 0;
     background-image: url('./img/bg04.png');
     background-size: 100% 100%;
@@ -651,12 +651,12 @@ footer {
     height: 134px;
     line-height: 134px;
 }
-.main-title .contact-us {
+.common-main-title .common-title {
     font-size: 34px;
-    vertical-align: middle;
+    vertical-align: -3px;
     line-height: 134px;
 }
-.main-title h1 {
+.common-main-title h1 {
     font-size: 24px;
     display: inline-block;
     line-height: 134px;
@@ -746,6 +746,7 @@ input[type=checkbox] {
     height: 210px;
     padding: 6px 12px;
 }
+
 .contact-input .contact-name, 
 .contact-input .furigana,
 .contact-input .phone-num,
@@ -840,13 +841,134 @@ p.privacy-title {
     display: none;
 }
   /**-------------------------------------------------------
- *default style
+ *ABOUT us
  --------------------------------------------------------*/
-
+.page-template-aboutus .common-main-title {
+    background-image: url('./img/bg05.png');
+    margin-bottom: 0;
+}
+.about-us {
+    width: 100%;
+    background-image: url('./img/bg06.png');
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    background-size: cover; 
+    margin-top: -3px;
+    padding: 135px 0 200px 0;
+}
+.about-us .about-us-content {
+    font-size: 1.4rem;
+    color: #1d4258;
+    line-height: 2.3;
+    margin-bottom: 48px;
+}
+.sign-up {
+    background-image: url('./img/signature.png');
+    background-repeat: no-repeat;
+    background-position: middle;
+    width: 360px;
+    height: 72px;
+}
+.sign-up .sign-up-person {
+    display: inline-block;
+    vertical-align: -32px;
+    font-size: 1.4rem;
+    color: #1d4258;
+}
  /**-------------------------------------------------------
- *default style
+ *Company
  --------------------------------------------------------*/
-
+.page-template-company .common-main-title {
+    background-image: url('./img/bg07.png');
+    margin-bottom: 0;
+    font-size: 0;
+}
+.company-content {
+    padding: 100px 0;
+}
+.company-content .company-desc {
+    float: left;
+    width: 600px;
+}
+.company-content .company-access {
+    width: 600px;
+    float: left;
+    padding-left: 47px;
+}
+.company-content .company-en {
+    font-size: 5.0rem;
+    color: #9faeb7;
+    display: block;
+    line-height: 0.6;
+}
+.company-content .company-title {
+    font-size: 2.4rem;
+    color: #fff;
+    background-color: #1d4258;
+    display: inline-block;
+    padding: 5px 7px;
+    margin-bottom: 50px;
+}
+.company-info tr {
+    padding-bottom: 25px;
+}
+.company-info .com-info-title {
+    width: 145px;
+    padding-bottom: 25px;
+    text-align: left;
+    font-weight: normal;
+    color: #c18356;
+    font-size: 1.4rem;
+}
+.company-info .com-info-desc {
+    color: #1d4258;
+    font-size: 1.4rem;
+    font-weight: bold;
+    padding-bottom: 25px;
+    line-height: 1.4;
+}
+.company-access .access-desc {
+    font-size: 1.4rem;
+    color: #1d4258;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.company-access .com-means {
+    color: #c18356;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 40px 0 7px;
+}
+.company-access .com-means::before {
+    content: '';
+    display: inline-block;
+    vertical-align: 1.5px;
+    margin-right: 14px;
+    width: 8px;
+    height: 8px;
+    background-color: #c18356;
+}
+.company-access .com-distance {
+    margin-left: 22px;
+    font-size: 1.4rem;
+    color: #1d4258;
+    line-height:1.8;
+}
+.company-access .company-photo {
+    width: 658px;
+    height: 380px;
+    margin: 65px 0 0 11px;
+}
+.company-navi .navi-address {
+    font-size: 1.4rem;
+    color: #c15656;
+}
+.company-navi .mapouter {
+    margin: 15px 0 205px;
+}
+.company-navi .mapouter iframe {
+    width: 100% ;
+}
  /**-------------------------------------------------------
  *default style
  --------------------------------------------------------*/
