@@ -5,10 +5,10 @@ Author: zcoder83
 Description: mytheme for rising website
 Version: 1.0
 */
-@font-face {
+/* @font-face {
 	font-family: ;
 	src: url('url-here') format("");
-}
+} */
 
 /**-------------------------------------------------------
  *default style
@@ -191,6 +191,7 @@ a:link, a:visited, a:hover, a:active {
     text-align: right;
     line-height: 30px;
     vertical-align: -15px;
+    background-clip: text;  
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-image: linear-gradient(
@@ -224,7 +225,6 @@ a:link, a:visited, a:hover, a:active {
     width: 550px;
 }
 .top-menu .menu-item-has-children ul.sub-menu li {
-    width: ;
     display: inline-block;
     margin: 0;
 }
@@ -488,7 +488,6 @@ footer {
 }
 .footer .copyright {
   font-size: 0.9rem;
-  color:;
   margin-top: 25px;
 }
 .footer .company-item {
@@ -970,9 +969,71 @@ p.privacy-title {
     width: 100% ;
 }
  /**-------------------------------------------------------
- *default style
+ *Voice
  --------------------------------------------------------*/
-
+ .page-template-voice .voice-main .heading {
+     margin-bottom: 60px;
+ }
+ .voice-main .en-title,
+ .page-template-voice .side-model .en-title {
+    padding-top: 70px;
+ }
+ 
+ .voice-item {
+     position: relative;
+     width: 100%;
+     height: 336px;
+ }
+ .voice-item .title {
+     color: #fff;
+     background-color: #c68e66;
+     padding: 42px 268px 42px 32px;
+     width: 600px;
+     font-size: 20px;
+     line-height: 1.8;
+     position: absolute;
+     top: 0;
+     left: 0;
+ }
+ .voice-item .bg-opa {
+     width: 500px;
+     height: 200px;
+     background-color: rgba(198,142,102,0.1);
+     position: absolute;
+     bottom: 0;
+     left: 150px;
+ }
+ .voice-item .maker {
+     color: rgba(175,77,5,0.4);
+     font-size: 3.0rem;
+     position: absolute;
+     top: 205px;
+     left: 40px;
+ }
+ .voice-item .br-line {
+     width: 214px;
+     height: 2px; 
+     background-color: #c18356;
+     position: absolute;
+     top: 250px;
+     left: 110px;
+ }
+.voice-page .voice-image {
+    width: 383px;
+    height: 283px;
+    padding: 3px;
+    background-color: #c18356;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    z-index: 10;
+}
+.voice-page > p {
+    font-size: 1.3rem;
+    color: #51585c;
+    line-height: 2.3;
+    margin: 23px 0 55px;
+}
  /**-------------------------------------------------------
  *default style
  --------------------------------------------------------*/
@@ -980,3 +1041,4 @@ p.privacy-title {
  /**-------------------------------------------------------
  *default style
  --------------------------------------------------------*/
+
