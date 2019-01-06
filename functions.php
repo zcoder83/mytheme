@@ -62,370 +62,55 @@ function mwform_form_class() {
   add_action( 'wp_head', 'mwform_form_class', 10000 );
 
   /**-------------------------------------------------------
- Remove 
+ Numeric
  --------------------------------------------------------*/
-   /**-------------------------------------------------------
- Remove 
- --------------------------------------------------------*/
-   /**-------------------------------------------------------
- Remove 
- --------------------------------------------------------*/
-   /**-------------------------------------------------------
- Remove 
- --------------------------------------------------------*/
-   /**-------------------------------------------------------
- Remove 
- --------------------------------------------------------*/
-   /**-------------------------------------------------------
- Remove 
- --------------------------------------------------------*/
- if( function_exists('acf_add_local_field_group') ):
+ function pagination($pages = '', $range = 4)
+{
+$showitems = ($range * 2)+1;
+global $paged;
+if(empty($paged)) $paged = 1;
+if($pages == '')
+{
+global $wp_query;
+$pages = $wp_query->max_num_pages;
+if(!$pages)
+{
+$pages = 1;
+}
+}
+if(1 != $pages)
+{
+echo '<div class="pagination"><span>Page' . $paged . ' of  ' . $pages . '</span>';
+if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo '<a href="' . get_pagenum_link(1) . '"><< First</a>';
+if($paged > 1 && $showitems < $pages) echo '<a href="'.get_pagenum_link($paged - 1).'">< Previous</a>';
+for ($i=1; $i <= $pages; $i++)
+{
+if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
+{
+echo ($paged == $i)? '<span class="current">' . $i . '</span>' : '<a href="' . get_pagenum_link($i) . '" 
+class="inactive">' . $i . '</a>';
+}
+}
+if ($paged < $pages && $showitems < $pages) echo '<a href="' . get_pagenum_link($paged + 1) . '">Next ></a>';
+if ($paged < $pages-1 && $paged+$range-1 < $pages && $showitems < $pages) echo '<a href="' . get_pagenum_link($pages) . 
+'">Last >></a>';
+echo '</div>\n';
+}
+}
 
-  acf_add_local_field_group(array(
-    'key' => 'group_5c1f94716500f',
-    'title' => 'specific',
-    'fields' => array(
-      array(
-        'key' => 'field_5c1f94a2e3037',
-        'label' => '物件名',
-        'name' => '物件名',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5c1f94f5e3038',
-        'label' => '所在地',
-        'name' => '所在地',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5c1f9538e3039',
-        'label' => '交通',
-        'name' => '交通',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5c1f956de303a',
-        'label' => '販売戸数',
-        'name' => '販売戸数',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5c1f959fe303b',
-        'label' => '販売価格',
-        'name' => '販売価格',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5c1f95d6e303c',
-        'label' => '敷地面積',
-        'name' => '敷地面積',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5c1f95eae303d',
-        'label' => '土地権利',
-        'name' => '土地権利',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5c1f95ede303e',
-        'label' => '地目',
-        'name' => '地目',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5c1f9602e303f',
-        'label' => '都市計画',
-        'name' => '都市計画',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5c1f960de3040',
-        'label' => '用途地域',
-        'name' => '用途地域',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5c1f9610e3041',
-        'label' => '用途地域',
-        'name' => '用途地域',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5c1f9626e3042',
-        'label' => '容積率',
-        'name' => '容積率',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5c1f9632e3043',
-        'label' => '防火指定',
-        'name' => '防火指定',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5c1f9639e3044',
-        'label' => '設備',
-        'name' => '設備',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5c1f9653e3045',
-        'label' => '接道道路',
-        'name' => '',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5c1f96636e254',
-        'label' => '現況',
-        'name' => '現況',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-      array(
-        'key' => 'field_5c1f96736e255',
-        'label' => '引渡',
-        'name' => '引渡',
-        'type' => 'text',
-        'instructions' => '',
-        'required' => 0,
-        'conditional_logic' => 0,
-        'wrapper' => array(
-          'width' => '',
-          'class' => '',
-          'id' => '',
-        ),
-        'default_value' => '',
-        'placeholder' => '',
-        'prepend' => '',
-        'append' => '',
-        'maxlength' => '',
-      ),
-    ),
-    'location' => array(
-      array(
-        array(
-          'param' => 'post_type',
-          'operator' => '==',
-          'value' => 'post',
-        ),
-      ),
-    ),
-    'menu_order' => 0,
-    'position' => 'normal',
-    'style' => 'default',
-    'label_placement' => 'top',
-    'instruction_placement' => 'label',
-    'hide_on_screen' => '',
-    'active' => 1,
-    'description' => '',
-  ));
-  
-  endif;
+   /**-------------------------------------------------------
+ Remove 
+ --------------------------------------------------------*/
+   /**-------------------------------------------------------
+ Remove 
+ --------------------------------------------------------*/
+   /**-------------------------------------------------------
+ Remove 
+ --------------------------------------------------------*/
+   /**-------------------------------------------------------
+ Remove 
+ --------------------------------------------------------*/
+   /**-------------------------------------------------------
+ Remove 
+ --------------------------------------------------------*/
+ 

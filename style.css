@@ -1034,6 +1034,37 @@ p.privacy-title {
     line-height: 2.3;
     margin: 23px 0 55px;
 }
+.voice-page .wp-pagenavi {
+    text-align: right;
+}
+.voice-page .wp-pagenavi .pages,
+.voice-page .wp-pagenavi .last,
+.voice-page .wp-pagenavi .first {
+    display: none;
+}
+.voice-page .wp-pagenavi .page,
+.voice-page .wp-pagenavi .current {
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    color: #c18356;
+}
+.voice-page .wp-pagenavi .page {
+    text-decoration: underline;
+    color: #c18356;
+}
+.voice-page .wp-pagenavi .extend {
+    border: none;
+    padding: 0;
+}
+.voice-page .wp-pagenavi .extend,
+.voice-page .wp-pagenavi .previouspostslink,
+.voice-page .wp-pagenavi .nextpostslink {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-color: #c18356;
+    color: #c18356;
+}
  /**-------------------------------------------------------
  *default style
  --------------------------------------------------------*/
