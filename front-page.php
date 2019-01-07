@@ -72,7 +72,7 @@
                 ?>
                 <span class="<?php echo $cls; ?>">
                 <?php 
-                  if ($ctitle=="タウンプロジェクト  ") {
+                  if ($ctitle=="タウンプロジェクト") {
                     echo "タウン";
                   } else {
                     echo "ワンオン";

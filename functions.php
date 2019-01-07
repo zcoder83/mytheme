@@ -62,44 +62,23 @@ function mwform_form_class() {
   add_action( 'wp_head', 'mwform_form_class', 10000 );
 
   /**-------------------------------------------------------
- Numeric
+ google map
  --------------------------------------------------------*/
- function pagination($pages = '', $range = 4)
-{
-$showitems = ($range * 2)+1;
-global $paged;
-if(empty($paged)) $paged = 1;
-if($pages == '')
-{
-global $wp_query;
-$pages = $wp_query->max_num_pages;
-if(!$pages)
-{
-$pages = 1;
+
+ function add_googlemap_script() {
+  wp_enqueue_script( 'googlemap', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAh9T429yUCrOJT2KqK_tzjg6wcuti4HAc', array(), '', true );
 }
+add_action( 'wp_enqueue_scripts', 'add_googlemap_script' );
+
+function my_acf_google_map_api( $api ){
+	$api['key'] = 'AIzaSyAh9T429yUCrOJT2KqK_tzjg6wcuti4HAc';
+	return $api;
 }
-if(1 != $pages)
-{
-echo '<div class="pagination"><span>Page' . $paged . ' of  ' . $pages . '</span>';
-if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo '<a href="' . get_pagenum_link(1) . '"><< First</a>';
-if($paged > 1 && $showitems < $pages) echo '<a href="'.get_pagenum_link($paged - 1).'">< Previous</a>';
-for ($i=1; $i <= $pages; $i++)
-{
-if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
-{
-echo ($paged == $i)? '<span class="current">' . $i . '</span>' : '<a href="' . get_pagenum_link($i) . '" 
-class="inactive">' . $i . '</a>';
-}
-}
-if ($paged < $pages && $showitems < $pages) echo '<a href="' . get_pagenum_link($paged + 1) . '">Next ></a>';
-if ($paged < $pages-1 && $paged+$range-1 < $pages && $showitems < $pages) echo '<a href="' . get_pagenum_link($pages) . 
-'">Last >></a>';
-echo '</div>\n';
-}
-}
+ 
+add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
    /**-------------------------------------------------------
- Remove 
+ 
  --------------------------------------------------------*/
    /**-------------------------------------------------------
  Remove 
