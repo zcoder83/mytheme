@@ -31,25 +31,29 @@
                         ?>
                         <h3 class="single-title"><?php the_title(); ?></h3>
                         
-                        
+                        <div class="single-content">
                         <?php the_content(); ?>
-                        <a class="miru-btn" href="<?php the_field('suumo'); ?>" alt="suumo">SUUMOで見る</a>
-                        <a class="miru-btn at-home" href="<?php the_field('home'); ?>">at homeで見る</a>
-                        <a href=""></a>
+                        </div>
+                        <div class="miru-wrapper">
+                            <a class="miru-btn" href="<?php the_field('suumo'); ?>" alt="suumo">SUUMOで見る</a>
+                        </div>
+                        <div class="miru-wrapper">
+                            <a class="miru-btn at-home" href="<?php the_field('home'); ?>">at homeで見る</a>
+                        </div>
                         <h4 class="single-heading">物件詳細</h4>
                         
                         <table class="single-custom">
                             <tr class="single-row">
                                 <th>物件名</th>
-                                <td><?php the_field('物件名'); ?></td>
+                                <td colspan="3"><?php the_field('物件名'); ?></td>
                             </tr>
                             <tr class="single-row">
                                 <th>所在地</th>
-                                <td><?php the_field('所在地'); ?> </td>
+                                <td colspan="3"><?php the_field('所在地'); ?> </td>
                             </tr>
                             <tr class="single-row">
                                 <th>交通</th>
-                                <td><?php the_field('交通'); ?></td>
+                                <td colspan="3"><?php the_field('交通'); ?></td>
                             </tr>
                             <tr class="single-row">
                                 <th>販売戸数</th>
@@ -83,11 +87,11 @@
                             </tr>
                             <tr class="single-row">
                                 <th>設備</th>
-                                <td><?php the_field('設備'); ?></td>
+                                <td colspan="3"><?php the_field('設備'); ?></td>
                             </tr>
                             <tr class="single-row">
                                 <th>接道道路</th>
-                                <td><?php the_field('接道道路'); ?></td>
+                                <td colspan="3"><?php the_field('接道道路'); ?></td>
                             </tr>
                             <tr class="single-row">
                                 <th>現況</th>
@@ -96,6 +100,7 @@
                                 <td><?php the_field('引渡'); ?></td>
                             </tr>
                         </table> 
+                        <h4 class="single-heading">物件地図</h4>
                         <?php 
                             $location = get_field('map');
 
@@ -106,8 +111,9 @@
                             </div>
                             <?php endif; ?>   
                     <?php endwhile; ?>
-                    <a href="">この物件についてお問い合わせする</a>
-                    <div>
+                    <div class="go-contact">
+                        <a href="<?php echo bloginfo("template_url")?>/contact">この物件についてお問い合わせする</a>
+                    </div>
                     <?php $orig_post = $post;
                         global $post;
                         $categories = get_the_category($post->ID);
@@ -124,30 +130,27 @@
 
                         $my_query = new wp_query( $args );
                         if( $my_query->have_posts() ) {
-                        echo '<div id="related_posts"><h3>Related Posts</h3><ul>';
+                        echo '<p class="en-title move-left">Related</p>
+                        <h2 class="heading">関連物件</h2><div class="related_posts">';
                         while( $my_query->have_posts() ) {
                         $my_query->the_post();?>
 
-                        <li><div class="relatedthumb"><a href="<? the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_post_thumbnail('medium', array('class' => 'related-image')); ?></a></div>
-                        <div class="relatedcontent">
-                        <h3><a href="<? the_permalink()?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-                        <?php
-                                        $content = get_the_content();
-                                        $content = preg_replace("/<img[^>]+\>/i", " ", $content);
-                                        $content = apply_filters('the_content', $content);
-                                        $content = str_replace(']]>', ']]>', $content);
-                                        echo $content;
-                                        ?>
-                        </div>
-                        </li>
+                        <a class="article-box" href="<?php the_permalink();?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_post_thumbnail('medium', array('class' => 'image')); ?>
+                        <h3 class="title"><?php the_title(); ?></h3>
+                        <?php the_excerpt(); ?>
                         <?php
                         }
-                        echo '</ul></div>';
+                        echo '</a></div>';
                         }
                         }
                         $post = $orig_post;
                         wp_reset_query(); ?>
-                    </div>
+                        <div class="more">
+                            <a class="more-btn" href="">
+                                <span class="more-text">MORE</span>
+                                <span class="more-dir">></span>
+                            </a>
+                        </div>
                 <?php else : ?>
                         <h3>記事がありません</h3>
                         <p>表示する記事はありませんでした。</p>

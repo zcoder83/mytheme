@@ -78,9 +78,17 @@ function my_acf_google_map_api( $api ){
 add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
 
    /**-------------------------------------------------------
- 
+ single excerpt
  --------------------------------------------------------*/
-   /**-------------------------------------------------------
+function my_length($length){
+  return 10;
+}
+add_filter('excerpt_mblength','my_length');
+function my_more($more){
+  return '...';
+}
+add_filter('excerpt_more','my_more');
+ /**-------------------------------------------------------
  Remove 
  --------------------------------------------------------*/
    /**-------------------------------------------------------
