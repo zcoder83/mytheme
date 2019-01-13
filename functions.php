@@ -16,13 +16,22 @@ function additional_custom_styles() {
   } else {
     wp_enqueue_style( 'uniquestylesheetid', get_template_directory_uri() . '/style.css' ); 
   }
-
   /*Enqueue The Script*/
   wp_enqueue_script( 'yubinbango', '//yubinbango.github.io/yubinbango/yubinbango.js', array(), null, true );
   wp_enqueue_script( 'myscript', get_template_directory_uri() . '/js/myscript.js', array( 'jquery' ), '1.0.0', false );
 }
 add_action( 'wp_enqueue_scripts', 'additional_custom_styles' );
 
+/* add light slider */
+add_action( 'wp_enqueue_scripts', 'ls_scripts_styles', 20 );
+/**
+ * LightSlider Scripts
+ */
+function ls_scripts_styles() {
+	wp_enqueue_style( 'lightslidercss', get_stylesheet_directory_uri(). 'lightSlider/css/lightslider.min.css' , array(), '1.0.0', 'all' );
+	wp_enqueue_script( 'lightsliderjs', get_stylesheet_directory_uri() . 'lightSlider/js/lightslider.min.js', array( 'jquery' ), '1.0.0', true );
+	wp_enqueue_script( 'lightsliderinit', get_stylesheet_directory_uri() . 'lightSlider/js/lightslider-init.js', array( 'lightsliderjs' ), '1.0.0', true );
+}
 
 function cmsfactory_setup() {
   // add_theme_support( 'title-tag' );
@@ -81,11 +90,11 @@ add_filter('acf/fields/google_map/api', 'my_acf_google_map_api');
  single excerpt
  --------------------------------------------------------*/
 function my_length($length){
-  return 10;
+  return 24;
 }
-add_filter('excerpt_mblength','my_length');
+add_filter('excerpt_length','my_length',999);
 function my_more($more){
-  return '...';
+  return '';
 }
 add_filter('excerpt_more','my_more');
  /**-------------------------------------------------------
@@ -100,4 +109,3 @@ add_filter('excerpt_more','my_more');
    /**-------------------------------------------------------
  Remove 
  --------------------------------------------------------*/
- 

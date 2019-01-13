@@ -116,7 +116,8 @@ a:link, a:visited, a:hover, a:active {
      font-family: meiryo;
  }
  body.single-post,
- body.page-template {
+ body.page-template,
+ body.category {
     background-color: #f6f6f6;
  }
  .blue-line {
@@ -368,7 +369,10 @@ a:link, a:visited, a:hover, a:active {
     letter-spacing: 1px;
     vertical-align: -3px;
 }
-.home .article-box p {
+.home .article-box p,
+.single .article-box p,
+.category .article-box p,
+.category .cat-list-desc p {
     /* hide text if it more than N lines  */
     overflow: hidden;
     /* for set '...' in absolute position */
@@ -1077,7 +1081,8 @@ p.privacy-title {
     text-decoration: underline;
     font-size: 12px;
 }
-.single-post .side-model .en-title {
+.single-post .side-model .en-title,
+.category .en-title {
     padding-top: 70px;
  }
  .sub-heading {
@@ -1116,13 +1121,11 @@ p.privacy-title {
     height: 320px;
     border: #ccc solid 1px;
    }
-.single-content {
-    padding: 60px 0;
-}   
+
 .single-content p {
     font-size: 1.3rem;
     line-height: 2;
-    
+    padding: 60px 0;
 }
 .miru-wrapper {
     display: inline-block;
@@ -1200,9 +1203,31 @@ p.privacy-title {
     top: 0;
     left: 0;
 }
+.related_posts .article-box p {
+    font-size: 1.3rem;
+    color: #51585c;
+    line-height: 1.5;
+    margin-top: 20px;
+}
+#light-slider {
+    list-style-type: none;
+}
+#light-slider .image {
+    width: 750px;
+}
+#light-slider .image img {
+    display: block;
+    width: 100%;
+}
  /**-------------------------------------------------------
- *default style
+ *Category
  --------------------------------------------------------*/
+.category-desc-all {
+    font-size: 1.4rem;
+    color: #1d4258;
+    line-height: 2;
+    margin: 40px 0;
+}
 
   /**-------------------------------------------------------
  *default style

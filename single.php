@@ -32,6 +32,7 @@
                         <h3 class="single-title"><?php the_title(); ?></h3>
                         
                         <div class="single-content">
+                        <?php echo do_shortcode('[metaslider id="174"]'); ?>
                         <?php the_content(); ?>
                         </div>
                         <div class="miru-wrapper">
@@ -162,5 +163,4 @@
         </div>
     </div>
 </div>
-
 <?php get_footer(); ?>
