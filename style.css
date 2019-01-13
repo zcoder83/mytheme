@@ -349,7 +349,6 @@ a:link, a:visited, a:hover, a:active {
     color: #fff;
     font-size: 1.2rem;
     padding: 4px 9px;
-    
     text-align: center;
     letter-spacing: 1px;
 }
@@ -372,7 +371,9 @@ a:link, a:visited, a:hover, a:active {
 .home .article-box p,
 .single .article-box p,
 .category .article-box p,
-.category .cat-list-desc p {
+.page-template .cat-list-desc p,
+.paged .article-box p,
+.model-item p {
     /* hide text if it more than N lines  */
     overflow: hidden;
     /* for set '...' in absolute position */
@@ -577,7 +578,7 @@ footer {
     float: left;
 }
 .article-project .title {
-    display: inline-block;
+    width: 162px;
     font-size: 1.4rem;
     color: #1d4258;
     letter-spacing: 1px;
@@ -979,7 +980,9 @@ p.privacy-title {
      margin-bottom: 60px;
  }
  .voice-main .en-title,
- .page-template-category-voice .side-model .en-title {
+ .page-template-category-voice .side-model .en-title,
+ .paged .side-model .en-title,
+ .page-template .side-model .en-title {
     padding-top: 70px;
  }
  
@@ -1100,7 +1103,8 @@ p.privacy-title {
      display: inline-block;
  }
 .single-town,
-.single-oneon {
+.single-oneon,
+.single-newevent {
     font-size: 1.2rem;
     letter-spacing: 1px;
     color: #fff;
@@ -1228,10 +1232,147 @@ p.privacy-title {
     line-height: 2;
     margin: 40px 0;
 }
+.page-template .wp-pagenavi {
+    margin-bottom: 30px;
+    text-align: right;
+}
+.page-template .wp-pagenavi .pages {
+    float: left;
+}
+.page-template .wp-pagenavi .pages,
+.page-template .wp-pagenavi .page,
+.page-template .wp-pagenavi .current {
+    border: none;
+    color: #37637f;
+}
+.page-template .wp-pagenavi .previouspostslink,
+.page-template .wp-pagenavi .nextpostslink {
+    color: #37637f;
+    border-color: rgba(55, 99, 127, 0.5);
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.page-template .wp-pagenavi .nextpostslink {
+    margin-right: 0;
+}
+.page-template .wp-pagenavi .previouspostslink:hover,
+.page-template .wp-pagenavi .nextpostslink:hover {
+    color: #37637f;
+    border-color: #37637f;
+}
+.page-template .wp-pagenavi .last,
+.page-template .wp-pagenavi .first {
+    display: none;
+}
+.page-template .wp-pagenavi .extend {
+    padding-top: 0;
+    padding-bottom: 0;
+    border: none;
+    color: #1d4258;
+}
+.page-template .wp-pagenavi .current {
+    color: #1d4258;
+}
+.page-template .wp-pagenavi .page {
+    text-decoration: underline;
+}
+.category-list {
+    display: block;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 2px 2px 2px rgba(29,66,88,0.13);
+    margin-bottom: 20px;
+    height: 180px;
+}
+.category-list .cat-list-img {
+    width: 240px;
+    height: 180px;
+    float: left;
+}
+.category-list .cat-list-img .cat-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.category-list .cat-list-desc {
+    width: 510px;
+    float: right;
+    padding: 30px;
+}
 
+.category-list .cat-list-desc span {
+    display: inline-block;
+    width: 85px;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 4px 9px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+.category-list .cat-list-desc .town-project {
+    background-color: #37637f;
+}
+.category-list .cat-list-desc .oneon-project {
+    background-color: #c18356;
+}
+.category-list .cat-list-desc .model-house {
+    background-color: #d06f50;
+}
+.category-list .cat-list-desc .new-event {
+    background-color: #087e8b;
+    width: 105px;
+}
+.category-list .cat-secon-title {
+    margin: 20px 0;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    color: #1d4258;
+    width: 450px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.page-template .wp-pagenavi:nth-of-type(2n) .pages {
+    display: none;
+}
   /**-------------------------------------------------------
- *default style
+ *New Event
+    color: #c18356;
  --------------------------------------------------------*/
+.single-newevent {
+    background-color: #087e8b;
+    margin: 25px 0;
+}
+.newevent-list-img {
+    width: 750px;
+    height: 565px;
+}
+.newevent-image {
+    width: 100%;
+    height: 100%;
+}
+.newevent-content p {
+    padding: 0;
+    margin-top: 33px;
+    color: #51585c;
+}
+.single-content .event-title {
+    margin-top: 45px;
+    font-size: 1.8rem;
+    color: #1d4258;
+    padding: 15px;
+    border: 1px solid #1d4258;
+}
+.single-content .event-desc {
+    padding: 33px 0 0;
+    color: #51585c;
+}
+.single-content .event-img {
+    display: block;
+    margin-top: 30px;
+    width: 750px;
+    height: 390px;
+}
 
   /**-------------------------------------------------------
  *default style

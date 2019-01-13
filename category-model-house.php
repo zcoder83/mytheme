@@ -1,17 +1,16 @@
 <?php
 /**
- * Template Name: Category Town Project
+ * Template Name: Category Model-House
  */
 get_header();
 ?>
 <div class="top-sub-navi inner-wrapper">
     <span class="contact-category-list"><a href="<?php echo home_url(); ?>">TOP</a></span> &gt <a href="<?php the_permalink()?>"><?php the_title(); ?></a>
 </div>
-
 <div class="wrapper">
     <div class="inner-wrapper clearfix">
         <div class="main">
-        <h2 class="sub-heading">“タウンプロジェクト” の記事一覧</h2>
+        <h2 class="sub-heading">“モデルハウス” の記事一覧</h2>
         <p class="category-desc-all">多区画の街造り。一定のコンセプトを設け、新しい街を創造します。ある程度共通した仕様の中ですのでコスト面でお客様に満足していただける企画です。ただ自由設計である事は同じです。</p>
         
         <!-- pagination with category display -->
@@ -20,7 +19,7 @@ get_header();
         $args = array(
             'post_type' => 'post',
             'post_status' => 'publish',
-            'category_name' => 'town-project',
+            'category_name' => 'model-house',
             'posts_per_page' => 10,
             'paged' => $paged,
         );
@@ -45,7 +44,7 @@ get_header();
                         ?>   
                     </div>
                     <div class="cat-list-desc">
-                        <span class="town-project">タウン</span>
+                        <span class="model-house">モデル</span>
                         <h2 class="cat-secon-title"><?php echo get_secondary_title(); ?></h2>
                         <?php
                             $content = get_the_content(array('class' => 'cat-content'));
