@@ -1377,6 +1377,17 @@ p.privacy-title {
   /**-------------------------------------------------------
  *default style
  --------------------------------------------------------*/
+ .inquiry .input-title {
+     float: left;
+ }
+ .inquiry .essential {
+     float: left;
+ }
+.wrapper-desc {
+    width: 582px;
+    float: left;
+}
+
 
   /**-------------------------------------------------------
  *default style
